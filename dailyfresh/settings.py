@@ -90,7 +90,7 @@ DATABASES = {
         "NAME": "dailyfresh",
         "USER":"root",
         "PASSWORD":"123456",
-        'HOST':'192.168.0.105',
+        'HOST': '127.0.0.1',
         'PORT':3306,
     }
 }
