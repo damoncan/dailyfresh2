@@ -61,11 +61,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "dailyfresh.urls"
-
+APPEND_SLASH=False
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR),'templates'],
+        "DIRS":  [BASE_DIR/'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -137,3 +137,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+#发送邮件配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+# 发送邮件的邮箱
+EMAIL_HOST_USER = '19209307662@163.com'
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'SYTLVLIWAVKENTMN'
+# 收件人看到的发件人
+EMAIL_FROM = '天天生鲜<19209307662@163.com>'

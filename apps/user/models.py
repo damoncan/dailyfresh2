@@ -9,6 +9,8 @@ class User(AbstractUser,BaseModel):
         verbose_name='用户'
         verbose_name_plural=verbose_name
 
+
+
 class Address(BaseModel):
     '''地址模型类'''
     user=models.ForeignKey("User",on_delete=models.CASCADE,verbose_name='所属账户')
