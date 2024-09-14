@@ -91,7 +91,6 @@ class RegisterView(View):
         email = request.POST.get('email')
         allow = request.POST.get('allow')
 
-
         # 数据校验
         if not all([username, password, email]):
             # 数据不完整
@@ -123,6 +122,7 @@ class RegisterView(View):
         info={'confirm':user.id}
         token=serializer.dumps(info)#bytes
         token=token.decode()
+        print(token)
         #发邮件
         send_register_active_email.delay(email,username,token)
         # 返回应答，跳转到首页
